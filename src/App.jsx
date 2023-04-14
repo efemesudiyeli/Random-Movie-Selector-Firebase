@@ -45,11 +45,9 @@ function App() {
         movieDB[randomIndex] == selectedMovie ||
         alreadySuggestedMovies.includes(movieDB[randomIndex])
       ) {
-        console.log("döndü");
         randomIndex = Math.floor(Math.random() * movieDB.length);
       }
 
-      console.log(movieDB[randomIndex]);
       setSelectedMovie(movieDB[randomIndex]);
       setAlreadySuggestedMovies((current) => [
         ...current,
@@ -60,7 +58,8 @@ function App() {
 
   return (
     <div className="App">
-      <span>{selectedMovie && <div>{selectedMovie}</div>}</span>
+      <span>{selectedMovie && <h1>{selectedMovie}</h1>}</span>
+      <br />
       <span>
         {alreadySuggestedMovies.length == movieDB.length ? (
           <>
